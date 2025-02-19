@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background-color: #FBFFE4;
+    }
+
+    h1, p {
+      margin: 10px;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20vh auto;
+      padding: 30px;
+      max-width: 500px;
+      font-size: 1.5rem;
+      color: #3D8D7A;
+      text-align: center;
+      background-color: #A3D1C6;
+      border-radius: 15px;
+    }
+
+    .input-field, .btn {
+      padding: 15px 30px;
+      border: 0;
+      border-radius: 15px;
+    }
+
+    .input-field:focus-visible,
+    .btn:focus-visible {
+      outline: 1px solid #3D8D7A;
+    }
+
+    .input-field {
+      background-color: #FBFFE4;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-size: 1.25rem;
+      color: white;
+      text-transform: uppercase;
+      background-color: #3D8D7A;
+    }
+
+    .result {
+      font-size: 3.5rem;
+      color: #D91656;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Угадайте число</h1>
+    <p>от 1 до 10</p>
+    <input class="input-field" id="number" type="number">
+    <button class="btn" type="submit" id="submit-btn">Угадать число</button>
+    <p class="result" id="text-el"></p>
+  </div>
+
+  <script>
+    const n = document.getElementById('number')
+    const textEl = document.getElementById('text-el')
+    const submitBtn = document.getElementById('submit-btn')
+
+
+    submitBtn.addEventListener('click', function() {
+      let enteredNumber = Number(n.value)
+      if (enteredNumber === 7) {
+      textEl.textContent = "Вы выиграли!"
+    } else {
+      textEl.textContent = "Вы проиграли!"
+    }
+
+    })
+
+  </script>
+
+</body>
+</html>
